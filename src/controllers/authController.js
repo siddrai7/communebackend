@@ -85,7 +85,13 @@ class AuthController {
         client.release();
       }
     } catch (error) {
-      next(error);
+      console.error("Login error:", error);
+      next(
+        createError(
+          "INTERNAL_SERVER_ERROR",
+          "Something went wrong. Please try again later."
+        )
+      );
     }
   }
 
