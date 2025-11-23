@@ -50,7 +50,8 @@ app.use(
 const allowedOrigins = [
   "http://localhost:3000",
   "https://commune-4718a.web.app",
-  process.env.FRONTEND_URL
+  "https://proflow.lancehawks.com/",
+  process.env.FRONTEND_URL,
 ].filter(Boolean);
 
 app.use(

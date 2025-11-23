@@ -430,14 +430,18 @@ class OnboardingController {
           await sendLeadOnboardingEmail({
             name: lead.name,
             email: lead.email,
-            buildingName: "Commune Quartex"
+            buildingName: "PropertyFlow Quartex",
           });
-          
-          console.log(`✅ Onboarding email sent to ${lead.email} for ${lead.name}`);
+
+          console.log(
+            `✅ Onboarding email sent to ${lead.email} for ${lead.name}`
+          );
         } catch (emailError) {
           // Log email error but don't fail the onboarding process
           console.error("⚠️ Failed to send onboarding email:", emailError);
-          console.error("Onboarding was successful, but email notification failed");
+          console.error(
+            "Onboarding was successful, but email notification failed"
+          );
         }
 
         res.json({

@@ -26,18 +26,18 @@ const createTransporter = () => {
 const getOTPEmailTemplate = (otp, purpose) => {
   const templates = {
     login: {
-      subject: "Login OTP - Commune Apartments",
+      subject: "Login OTP - PropertyFlow",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
           <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px; text-align: center; margin-bottom: 30px;">
-            <h1 style="margin: 0; font-size: 28px;">🏠 Commune Apartments</h1>
+            <h1 style="margin: 0; font-size: 28px;">🏠 PropertyFlow</h1>
             <p style="margin: 10px 0 0 0; font-size: 16px; opacity: 0.9;">Property Management Portal</p>
           </div>
           
           <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
             <h2 style="color: #333; margin-top: 0;">Login Verification Code</h2>
             <p style="color: #666; font-size: 16px; line-height: 1.5;">
-              Hello! You've requested to log in to your Commune Apartments account. 
+              Hello! You've requested to log in to your PropertyFlow account. 
               Please use the verification code below to complete your login:
             </p>
             
@@ -62,18 +62,18 @@ const getOTPEmailTemplate = (otp, purpose) => {
           </div>
           
           <div style="text-align: center; margin-top: 30px; color: #888; font-size: 12px;">
-            <p>© ${new Date().getFullYear()} Commune Apartments. All rights reserved.</p>
+            <p>© ${new Date().getFullYear()} PropertyFlow. All rights reserved.</p>
             <p>This is an automated message, please do not reply to this email.</p>
           </div>
         </div>
       `,
     },
     resend: {
-      subject: "New Login OTP - Commune Apartments",
+      subject: "New Login OTP - PropertyFlow",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
           <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px; text-align: center; margin-bottom: 30px;">
-            <h1 style="margin: 0; font-size: 28px;">🏠 Commune Apartments</h1>
+            <h1 style="margin: 0; font-size: 28px;">🏠 PropertyFlow</h1>
             <p style="margin: 10px 0 0 0; font-size: 16px; opacity: 0.9;">Property Management Portal</p>
           </div>
           
@@ -101,7 +101,7 @@ const getOTPEmailTemplate = (otp, purpose) => {
           </div>
           
           <div style="text-align: center; margin-top: 30px; color: #888; font-size: 12px;">
-            <p>© ${new Date().getFullYear()} Commune Apartments. All rights reserved.</p>
+            <p>© ${new Date().getFullYear()} PropertyFlow. All rights reserved.</p>
           </div>
         </div>
       `,
@@ -119,7 +119,7 @@ export const sendOTP = async (email, otp, purpose = "login") => {
 
     const mailOptions = {
       from: {
-        name: "Commune Apartments",
+        name: "PropertyFlow",
         address: process.env.EMAIL_USER,
       },
       to: email,
@@ -155,22 +155,22 @@ export const sendWelcomeEmail = async (
 
     const mailOptions = {
       from: {
-        name: "Commune Apartments",
+        name: "PropertyFlow",
         address: process.env.EMAIL_USER,
       },
       to: email,
-      subject: "Welcome to Commune Apartments!",
+      subject: "Welcome to PropertyFlow!",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
           <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px; text-align: center; margin-bottom: 30px;">
-            <h1 style="margin: 0; font-size: 28px;">🏠 Welcome to Commune Apartments!</h1>
+            <h1 style="margin: 0; font-size: 28px;">🏠 Welcome to PropertyFlow!</h1>
             <p style="margin: 10px 0 0 0; font-size: 16px; opacity: 0.9;">Property Management Portal</p>
           </div>
           
           <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
             <h2 style="color: #333; margin-top: 0;">Hello ${firstName}!</h2>
             <p style="color: #666; font-size: 16px; line-height: 1.5;">
-              Welcome to Commune Apartments! Your account has been successfully created.
+              Welcome to PropertyFlow! Your account has been successfully created.
             </p>
             
             <div style="background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 4px;">
@@ -200,7 +200,7 @@ export const sendWelcomeEmail = async (
           </div>
           
           <div style="text-align: center; margin-top: 30px; color: #888; font-size: 12px;">
-            <p>© ${new Date().getFullYear()} Commune Apartments. All rights reserved.</p>
+            <p>© ${new Date().getFullYear()} PropertyFlow. All rights reserved.</p>
           </div>
         </div>
       `,
@@ -223,16 +223,16 @@ export const sendPasswordResetEmail = async (email, resetToken) => {
 
     const mailOptions = {
       from: {
-        name: "Commune Apartments",
+        name: "PropertyFlow",
         address: process.env.EMAIL_USER,
       },
       to: email,
-      subject: "Password Reset - Commune Apartments",
+      subject: "Password Reset - PropertyFlow",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
           <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px; text-align: center; margin-bottom: 30px;">
             <h1 style="margin: 0; font-size: 28px;">🔒 Password Reset</h1>
-            <p style="margin: 10px 0 0 0; font-size: 16px; opacity: 0.9;">Commune Apartments</p>
+            <p style="margin: 10px 0 0 0; font-size: 16px; opacity: 0.9;">PropertyFlow</p>
           </div>
           
           <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
@@ -261,7 +261,7 @@ export const sendPasswordResetEmail = async (email, resetToken) => {
           </div>
           
           <div style="text-align: center; margin-top: 30px; color: #888; font-size: 12px;">
-            <p>© ${new Date().getFullYear()} Commune Apartments. All rights reserved.</p>
+            <p>© ${new Date().getFullYear()} PropertyFlow. All rights reserved.</p>
           </div>
         </div>
       `,
@@ -281,14 +281,14 @@ const getComplaintEmailTemplate = (type, data) => {
   const baseStyle = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
       <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px; text-align: center; margin-bottom: 30px;">
-        <h1 style="margin: 0; font-size: 28px;">🏠 Commune Apartments</h1>
+        <h1 style="margin: 0; font-size: 28px;">🏠 PropertyFlow</h1>
         <p style="margin: 10px 0 0 0; font-size: 16px; opacity: 0.9;">Complaint Management System</p>
       </div>
   `;
 
   const footerStyle = `
       <div style="text-align: center; margin-top: 30px; color: #888; font-size: 12px;">
-        <p>© ${new Date().getFullYear()} Commune Apartments. All rights reserved.</p>
+        <p>© ${new Date().getFullYear()} PropertyFlow. All rights reserved.</p>
         <p>For urgent matters, please contact your building manager directly.</p>
       </div>
     </div>
@@ -311,7 +311,9 @@ const getComplaintEmailTemplate = (type, data) => {
             <table style="width: 100%; border-collapse: collapse;">
               <tr style="border-bottom: 1px solid #dee2e6;">
                 <td style="padding: 8px 0; font-weight: bold; color: #495057; width: 150px;">Complaint Number:</td>
-                <td style="padding: 8px 0; color: #666;">${data.complaintNumber}</td>
+                <td style="padding: 8px 0; color: #666;">${
+                  data.complaintNumber
+                }</td>
               </tr>
               <tr style="border-bottom: 1px solid #dee2e6;">
                 <td style="padding: 8px 0; font-weight: bold; color: #495057;">Category:</td>
@@ -320,7 +322,13 @@ const getComplaintEmailTemplate = (type, data) => {
               <tr style="border-bottom: 1px solid #dee2e6;">
                 <td style="padding: 8px 0; font-weight: bold; color: #495057;">Priority:</td>
                 <td style="padding: 8px 0; color: #666;">
-                  <span style="background: ${data.priority === 'urgent' ? '#dc3545' : data.priority === 'high' ? '#fd7e14' : '#ffc107'}; 
+                  <span style="background: ${
+                    data.priority === "urgent"
+                      ? "#dc3545"
+                      : data.priority === "high"
+                      ? "#fd7e14"
+                      : "#ffc107"
+                  }; 
                                color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px; text-transform: uppercase;">
                     ${data.priority}
                   </span>
@@ -332,7 +340,9 @@ const getComplaintEmailTemplate = (type, data) => {
               </tr>
               <tr style="border-bottom: 1px solid #dee2e6;">
                 <td style="padding: 8px 0; font-weight: bold; color: #495057;">Building:</td>
-                <td style="padding: 8px 0; color: #666;">${data.buildingName}</td>
+                <td style="padding: 8px 0; color: #666;">${
+                  data.buildingName
+                }</td>
               </tr>
               <tr>
                 <td style="padding: 8px 0; font-weight: bold; color: #495057;">Status:</td>
@@ -370,30 +380,52 @@ const getComplaintEmailTemplate = (type, data) => {
           </p>
           
           <div style="background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 20px; margin: 25px 0;">
-            <h3 style="color: #495057; margin-top: 0; margin-bottom: 15px;">Complaint: ${data.title}</h3>
-            <p style="margin: 0 0 10px 0;"><strong>Complaint Number:</strong> ${data.complaintNumber}</p>
+            <h3 style="color: #495057; margin-top: 0; margin-bottom: 15px;">Complaint: ${
+              data.title
+            }</h3>
+            <p style="margin: 0 0 10px 0;"><strong>Complaint Number:</strong> ${
+              data.complaintNumber
+            }</p>
             <p style="margin: 0 0 10px 0;"><strong>Previous Status:</strong> 
-              <span style="color: #6c757d; text-transform: capitalize;">${data.previousStatus}</span>
+              <span style="color: #6c757d; text-transform: capitalize;">${
+                data.previousStatus
+              }</span>
             </p>
             <p style="margin: 0 0 15px 0;"><strong>Current Status:</strong> 
-              <span style="background: ${data.status === 'resolved' ? '#28a745' : data.status === 'in_progress' ? '#17a2b8' : '#ffc107'}; 
+              <span style="background: ${
+                data.status === "resolved"
+                  ? "#28a745"
+                  : data.status === "in_progress"
+                  ? "#17a2b8"
+                  : "#ffc107"
+              }; 
                            color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px; text-transform: uppercase;">
-                ${data.status.replace('_', ' ')}
+                ${data.status.replace("_", " ")}
               </span>
             </p>
-            ${data.assignedTo ? `<p style="margin: 0 0 10px 0;"><strong>Assigned To:</strong> ${data.assignedTo}</p>` : ''}
-            ${data.updateNote ? `
+            ${
+              data.assignedTo
+                ? `<p style="margin: 0 0 10px 0;"><strong>Assigned To:</strong> ${data.assignedTo}</p>`
+                : ""
+            }
+            ${
+              data.updateNote
+                ? `
               <div style="background: #fff; border-left: 4px solid #17a2b8; padding: 15px; margin: 15px 0; border-radius: 4px;">
                 <p style="margin: 0; color: #0c5460; font-size: 14px;">
                   <strong>Update Note:</strong><br>
                   ${data.updateNote}
                 </p>
               </div>
-            ` : ''}
+            `
+                : ""
+            }
           </div>
           
           <div style="text-align: center; margin: 30px 0;">
-            <a href="${process.env.FRONTEND_URL || 'http://localhost:3000'}/tenant/complaints" 
+            <a href="${
+              process.env.FRONTEND_URL || "http://localhost:3000"
+            }/tenant/complaints" 
                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; display: inline-block;">
               View Complaint Details
             </a>
@@ -415,17 +447,27 @@ const getComplaintEmailTemplate = (type, data) => {
           </p>
           
           <div style="background: #d4edda; border: 1px solid #c3e6cb; border-radius: 8px; padding: 20px; margin: 25px 0;">
-            <h3 style="color: #155724; margin-top: 0; margin-bottom: 15px;">${data.title}</h3>
-            <p style="margin: 0 0 10px 0; color: #155724;"><strong>Complaint Number:</strong> ${data.complaintNumber}</p>
-            <p style="margin: 0 0 10px 0; color: #155724;"><strong>Resolved Date:</strong> ${new Date(data.resolvedAt).toLocaleDateString()}</p>
-            ${data.resolutionNotes ? `
+            <h3 style="color: #155724; margin-top: 0; margin-bottom: 15px;">${
+              data.title
+            }</h3>
+            <p style="margin: 0 0 10px 0; color: #155724;"><strong>Complaint Number:</strong> ${
+              data.complaintNumber
+            }</p>
+            <p style="margin: 0 0 10px 0; color: #155724;"><strong>Resolved Date:</strong> ${new Date(
+              data.resolvedAt
+            ).toLocaleDateString()}</p>
+            ${
+              data.resolutionNotes
+                ? `
               <div style="background: #fff; border-left: 4px solid #28a745; padding: 15px; margin: 15px 0; border-radius: 4px;">
                 <p style="margin: 0; color: #155724; font-size: 14px;">
                   <strong>Resolution Details:</strong><br>
                   ${data.resolutionNotes}
                 </p>
               </div>
-            ` : ''}
+            `
+                : ""
+            }
           </div>
           
           <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px;">
@@ -436,11 +478,15 @@ const getComplaintEmailTemplate = (type, data) => {
           </div>
           
           <div style="text-align: center; margin: 30px 0;">
-            <a href="${process.env.FRONTEND_URL || 'http://localhost:3000'}/tenant/complaints/${data.complaintId}" 
+            <a href="${
+              process.env.FRONTEND_URL || "http://localhost:3000"
+            }/tenant/complaints/${data.complaintId}" 
                style="background: #28a745; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; display: inline-block; margin-right: 10px;">
               Rate & Review
             </a>
-            <a href="${process.env.FRONTEND_URL || 'http://localhost:3000'}/tenant/complaints" 
+            <a href="${
+              process.env.FRONTEND_URL || "http://localhost:3000"
+            }/tenant/complaints" 
                style="background: #6c757d; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; display: inline-block;">
               View All Complaints
             </a>
@@ -457,7 +503,7 @@ const getComplaintEmailTemplate = (type, data) => {
         <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
           <h2 style="color: #dc3545; margin-top: 0;">🚨 New Complaint Alert</h2>
           <p style="color: #666; font-size: 16px; line-height: 1.5;">
-            Hello ${data.adminName || 'Admin'},<br><br>
+            Hello ${data.adminName || "Admin"},<br><br>
             A new complaint has been submitted and requires your attention.
           </p>
           
@@ -466,28 +512,44 @@ const getComplaintEmailTemplate = (type, data) => {
             <table style="width: 100%; border-collapse: collapse;">
               <tr style="border-bottom: 1px solid #f5c6cb;">
                 <td style="padding: 8px 0; font-weight: bold; color: #721c24; width: 150px;">Complaint Number:</td>
-                <td style="padding: 8px 0; color: #721c24;">${data.complaintNumber}</td>
+                <td style="padding: 8px 0; color: #721c24;">${
+                  data.complaintNumber
+                }</td>
               </tr>
               <tr style="border-bottom: 1px solid #f5c6cb;">
                 <td style="padding: 8px 0; font-weight: bold; color: #721c24;">Tenant:</td>
-                <td style="padding: 8px 0; color: #721c24;">${data.tenantName}</td>
+                <td style="padding: 8px 0; color: #721c24;">${
+                  data.tenantName
+                }</td>
               </tr>
               <tr style="border-bottom: 1px solid #f5c6cb;">
                 <td style="padding: 8px 0; font-weight: bold; color: #721c24;">Building:</td>
-                <td style="padding: 8px 0; color: #721c24;">${data.buildingName}</td>
+                <td style="padding: 8px 0; color: #721c24;">${
+                  data.buildingName
+                }</td>
               </tr>
               <tr style="border-bottom: 1px solid #f5c6cb;">
                 <td style="padding: 8px 0; font-weight: bold; color: #721c24;">Unit:</td>
-                <td style="padding: 8px 0; color: #721c24;">${data.unitNumber || 'N/A'}</td>
+                <td style="padding: 8px 0; color: #721c24;">${
+                  data.unitNumber || "N/A"
+                }</td>
               </tr>
               <tr style="border-bottom: 1px solid #f5c6cb;">
                 <td style="padding: 8px 0; font-weight: bold; color: #721c24;">Category:</td>
-                <td style="padding: 8px 0; color: #721c24;">${data.category}</td>
+                <td style="padding: 8px 0; color: #721c24;">${
+                  data.category
+                }</td>
               </tr>
               <tr style="border-bottom: 1px solid #f5c6cb;">
                 <td style="padding: 8px 0; font-weight: bold; color: #721c24;">Priority:</td>
                 <td style="padding: 8px 0; color: #721c24;">
-                  <span style="background: ${data.priority === 'urgent' ? '#dc3545' : data.priority === 'high' ? '#fd7e14' : '#ffc107'}; 
+                  <span style="background: ${
+                    data.priority === "urgent"
+                      ? "#dc3545"
+                      : data.priority === "high"
+                      ? "#fd7e14"
+                      : "#ffc107"
+                  }; 
                                color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px; text-transform: uppercase;">
                     ${data.priority}
                   </span>
@@ -495,18 +557,24 @@ const getComplaintEmailTemplate = (type, data) => {
               </tr>
               <tr>
                 <td style="padding: 8px 0; font-weight: bold; color: #721c24;">Submitted:</td>
-                <td style="padding: 8px 0; color: #721c24;">${new Date(data.createdAt).toLocaleString()}</td>
+                <td style="padding: 8px 0; color: #721c24;">${new Date(
+                  data.createdAt
+                ).toLocaleString()}</td>
               </tr>
             </table>
             
             <div style="margin-top: 15px;">
               <p style="margin: 0 0 5px 0; font-weight: bold; color: #721c24;">Issue Description:</p>
-              <p style="margin: 0; color: #721c24; font-style: italic;">"${data.description}"</p>
+              <p style="margin: 0; color: #721c24; font-style: italic;">"${
+                data.description
+              }"</p>
             </div>
           </div>
           
           <div style="text-align: center; margin: 30px 0;">
-            <a href="${process.env.FRONTEND_URL || 'http://localhost:3000'}/admin/complaints" 
+            <a href="${
+              process.env.FRONTEND_URL || "http://localhost:3000"
+            }/admin/complaints" 
                style="background: #dc3545; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; display: inline-block;">
               Manage Complaint
             </a>
@@ -528,7 +596,7 @@ export const sendComplaintEmail = async (type, recipientEmail, data) => {
 
     const mailOptions = {
       from: {
-        name: "Commune Apartments",
+        name: "PropertyFlow",
         address: process.env.EMAIL_USER,
       },
       to: recipientEmail,
@@ -539,11 +607,14 @@ export const sendComplaintEmail = async (type, recipientEmail, data) => {
     console.log(`📧 Sending ${type} complaint email to ${recipientEmail}`);
     const result = await transporter.sendMail(mailOptions);
     console.log(`✅ Complaint email sent successfully to ${recipientEmail}`);
-    
+
     return result;
   } catch (error) {
     console.error("📧 Complaint email error:", error);
-    throw createError("EMAIL_ERROR", "Failed to send complaint notification email");
+    throw createError(
+      "EMAIL_ERROR",
+      "Failed to send complaint notification email"
+    );
   }
 };
 
@@ -551,31 +622,33 @@ export const sendComplaintEmail = async (type, recipientEmail, data) => {
 export const sendLeadOnboardingEmail = async (leadData) => {
   try {
     const transporter = createTransporter();
-    
+
     const mailOptions = {
       from: {
-        name: "Pankaj Teja - Commune Apartments",
+        name: "Pankaj Teja - PropertyFlow",
         address: process.env.EMAIL_USER,
       },
       to: leadData.email,
-      subject: `Welcome to Commune Quartex - ${leadData.name}!`,
+      subject: `Welcome to PropertyFlow Quartex - ${leadData.name}!`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; line-height: 1.6;">
           <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px; text-align: center; margin-bottom: 30px;">
-            <h1 style="margin: 0; font-size: 28px;">🏠 Commune Quartex</h1>
+            <h1 style="margin: 0; font-size: 28px;">🏠 PropertyFlow Quartex</h1>
             <p style="margin: 10px 0 0 0; font-size: 16px; opacity: 0.9;">Premium Co-Living Experience</p>
           </div>
           
           <div style="background: white; padding: 0; border-radius: 10px;">
-            <p style="font-size: 16px; margin-bottom: 20px;">Hi <strong>${leadData.name}</strong>,</p>
+            <p style="font-size: 16px; margin-bottom: 20px;">Hi <strong>${
+              leadData.name
+            }</strong>,</p>
             
-            <p style="font-size: 16px; margin-bottom: 20px;">Greetings from Commune!!!</p>
+            <p style="font-size: 16px; margin-bottom: 20px;">Greetings from PropertyFlow!!!</p>
             
-            <p style="font-size: 16px; margin-bottom: 20px;">We would love to host you at Commune Quartex at Sector 57, kindly note the below mail for our offerings to you.</p>
+            <p style="font-size: 16px; margin-bottom: 20px;">We would love to host you at PropertyFlow Quartex at Sector 57, kindly note the below mail for our offerings to you.</p>
             
             <div style="background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 25px; margin: 30px 0;">
               <h3 style="color: #495057; margin-top: 0; margin-bottom: 20px;">📍 Property Details</h3>
-              <p style="margin: 8px 0;"><strong>Address:</strong> Commune Quartex / House No 1578 Sector 57, Gurgaon</p>
+              <p style="margin: 8px 0;"><strong>Address:</strong> PropertyFlow Quartex / House No 1578 Sector 57, Gurgaon</p>
               <p style="margin: 8px 0;"><strong>Occupancy:</strong> Single Occupancy</p>
               <p style="margin: 8px 0;"><strong>Room:</strong> Room No 203</p>
               <p style="margin: 8px 0;"><strong>Monthly Rent:</strong> INR 33,000 per month (GST Extra @ 12%)</p>
@@ -633,7 +706,7 @@ export const sendLeadOnboardingEmail = async (leadData) => {
               
               <div style="background: white; padding: 15px; border-radius: 5px; margin: 15px 0;">
                 <h5 style="color: #155724; margin-top: 0; margin-bottom: 10px;">ACCOUNT DETAILS:</h5>
-                <p style="margin: 5px 0; color: #333;"><strong>A/c Name:</strong> Commune Apartment LLP</p>
+                <p style="margin: 5px 0; color: #333;"><strong>A/c Name:</strong> PropertyFlow Apartment LLP</p>
                 <p style="margin: 5px 0; color: #333;"><strong>Bank:</strong> IndusInd Bank</p>
                 <p style="margin: 5px 0; color: #333;"><strong>Account Number:</strong> 201002351330</p>
                 <p style="margin: 5px 0; color: #333;"><strong>IFSC Code:</strong> INDB0000673</p>
@@ -652,14 +725,14 @@ export const sendLeadOnboardingEmail = async (leadData) => {
             
             <div style="background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 20px; margin: 30px 0; text-align: center;">
               <p style="margin: 0 0 15px 0; font-size: 16px;">Please follow us on</p>
-              <p style="margin: 0 0 15px 0;"><a href="https://www.instagram.com/commune.apartment/" style="color: #667eea; text-decoration: none;">https://www.instagram.com/commune.apartment/</a></p>
+              <p style="margin: 0 0 15px 0;"><a href="https://www.instagram.com/PropertyFlow.apartment/" style="color: #667eea; text-decoration: none;">https://www.instagram.com/PropertyFlow.apartment/</a></p>
               
               <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 8px; margin: 20px 0;">
-                <h4 style="margin: 0 0 10px 0;">🌟 Join Commune Rewards! 🌟</h4>
-                <p style="margin: 0 0 10px 0; font-size: 14px;">Your stay at Commune Apartment gets even more rewarding! 🎉</p>
+                <h4 style="margin: 0 0 10px 0;">🌟 Join PropertyFlow Rewards! 🌟</h4>
+                <p style="margin: 0 0 10px 0; font-size: 14px;">Your stay at PropertyFlow Apartment gets even more rewarding! 🎉</p>
                 <p style="margin: 0 0 15px 0; font-size: 14px;">Earn points for rent payments, referrals, and community activities. Redeem them for rent discounts, free services, and VIP perks! 💰✨</p>
-                <p style="margin: 0 0 10px 0; font-size: 14px;">🔗 Learn more: <a href="https://communeapartment.com/rewards/" style="color: #fff; text-decoration: underline;">https://communeapartment.com/rewards/</a></p>
-                <p style="margin: 0; font-size: 14px;">🚀 Get 500 points! Follow us on IG @commune.apartment and send a screenshot to rewards@commune-apartment.com</p>
+                <p style="margin: 0 0 10px 0; font-size: 14px;">🔗 Learn more: <a href="https://PropertyFlowapartment.com/rewards/" style="color: #fff; text-decoration: underline;">https://PropertyFlowapartment.com/rewards/</a></p>
+                <p style="margin: 0; font-size: 14px;">🚀 Get 500 points! Follow us on IG @PropertyFlow.apartment and send a screenshot to rewards@PropertyFlow-apartment.com</p>
               </div>
             </div>
             
@@ -671,17 +744,19 @@ export const sendLeadOnboardingEmail = async (leadData) => {
           </div>
           
           <div style="text-align: center; margin-top: 30px; color: #888; font-size: 12px;">
-            <p>© ${new Date().getFullYear()} Commune Apartments. All rights reserved.</p>
-            <p>This email contains important information about your accommodation at Commune Quartex.</p>
+            <p>© ${new Date().getFullYear()} PropertyFlow. All rights reserved.</p>
+            <p>This email contains important information about your accommodation at PropertyFlow Quartex.</p>
           </div>
         </div>
       `,
     };
 
-    console.log(`📧 Sending onboarding email to ${leadData.email} for ${leadData.name}`);
+    console.log(
+      `📧 Sending onboarding email to ${leadData.email} for ${leadData.name}`
+    );
     const result = await transporter.sendMail(mailOptions);
     console.log(`✅ Onboarding email sent successfully to ${leadData.email}`);
-    
+
     return result;
   } catch (error) {
     console.error("📧 Onboarding email error:", error);
